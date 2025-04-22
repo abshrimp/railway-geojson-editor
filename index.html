@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway GeoJSON Editor</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <button id="toggleMenu">メニューを開く</button>
+    <div id="controls" class="closed">
+        <h3>Railway GeoJSON Editor</h3>
+        <button id="penMode">ペンモード(P)</button>
+        <button id="dragMode">ドラッグモード(D)</button>
+        <button id="eraseMode">取り消しペンモード(E)</button>
+        <label>ペンの色: <input type="color" id="colorPicker" value="#00ad00"></label>
+        <label>ペンの太さ: <input type="range" id="penRadiusPicker" min="10" max="10000" value="1000" step="100"></label>
+        <label>ファイル: <input type="file" id="fileInput" accept=".geojson,.json"></label>
+        <label>初期色: <input type="color" id="initialColorPicker" value="#c8c8c8"></label>
+        <label>初期線の太さ: <input type="number" id="initialWeightPicker" min="1" max="10" value="1"></label>
+        <button id="saveLocal">LocalStorageに保存</button>
+        <button id="exportFile">ファイルにエクスポート</button>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
